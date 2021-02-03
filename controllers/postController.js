@@ -124,7 +124,7 @@ exports.index = function(req, res) {
       // find the count of posts in database
       models.Post.findAndCountAll(
       ).then(function(postCount) {
-          models.Author.findAndCountAll(
+          models.Employee.findAndCountAll(
       ).then(function(employeeCount) {
           models.User.findAndCountAll(
       ).then(function(userCount) {
