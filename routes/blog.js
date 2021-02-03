@@ -45,7 +45,7 @@ router.get('/posts', post_controller.post_list);
 router.post('/employee/create', employee_controller.employee_create_post);
 
 // // POST request to delete employee.
- router.post('/employee/:employee_id/delete', employee_controller.employee_delete_post);
+ router.get('/employee/:employee_id/delete', employee_controller.employee_delete_get);
 
 
 // // // GET request to update Author.
