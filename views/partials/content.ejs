@@ -236,7 +236,7 @@
             </form>
         </div>
     </div>
-<% }else if (title == 'Create Author') { %>
+<% }else if (title == 'Create Employee') { %>
      <div class="col-sm-8">    
         <div class="jumbotron">
             <form action="" method="post">
@@ -259,50 +259,50 @@
             </form>
         </div>
     </div>
-<% }else if (title == 'Author List') { %>
+<% }else if (title == 'Employee List') { %>
      <div class="col-sm-8">    
         <div class="">
-            <h1>List Of Authors</h1>
+            <h1>List Of Employees</h1>
             <ol>
-            <% authors.forEach(function(author) { %>
+            <% employees.forEach(function(employee) { %>
                     <li>
-                        <h4><a href="/blog/author/<%= author.id %>"><%= author.username %></a></h4>
+                        <h4><a href="/blog/employee/<%= employee.id %>"><%= employee.username %></a></h4>
                         
-                         <a class="btn btn-success" href="/blog/author/<%= author.id %>/update">Edit</a> | <a class="btn btn-danger" href="/blog/author/<%= author.id %>/delete">Delete </a>
+                         <a class="btn btn-success" href="/blog/employee/<%= employee.id %>/update">Edit</a> | <a class="btn btn-danger" href="/blog/employee/<%= employee.id %>/delete">Delete </a>
                     </li>
                 <br/>
             <% }); %>
             </ol>
         </div>
     </div>
-<% }else if (title == 'Author Details') { %>
+<% }else if (title == 'Employee Details') { %>
     <div class="col-sm-8">    
         <div class="">
-             <h1>Details of a Single Author</h1>
-             <p>Author ID - <%= author.id %></p>
-             <p>Firstname: <%= author.first_name %></p>
-             <p>Lastname: <%= author.last_name %></p>
-             <p>Username: <%= author.username %></p>
-             <p>Role: <%= author.role %></p>
-             <p>Email: <%= author.email %></p>
-             <a class="btn btn-success" href="/blog/author/<%= author.id %>/update">Edit </a> | <a class="btn btn-danger" href="/blog/author/<%= author.id %>/delete">Delete </a>
+             <h1>Details of a Single employee</h1>
+             <p>employee ID - <%= employee.id %></p>
+             <p>Firstname: <%= employee.first_name %></p>
+             <p>Lastname: <%= employee.last_name %></p>
+             <p>Username: <%= employee.username %></p>
+             <p>Role: <%= employee.role %></p>
+             <p>Email: <%= employee.email %></p>
+             <a class="btn btn-success" href="/blog/employee/<%= employee.id %>/update">Edit </a> | <a class="btn btn-danger" href="/blog/employee/<%= employee.id %>/delete">Delete </a>
         </div>
     </div>
 <% }else if (title == 'Delete User') { %>
      
-<% }else if (title == 'Update Author') { %>
+<% }else if (title == 'Update Employee') { %>
      <div class="col-sm-8">    
         <div class="jumbotron">
             <form action="" method="post">
-              <h2 >Update Author</h2>
+              <h2 >Update employee</h2>
               Username:<br>
-              <input class="form-control" style="margin:1rem 0" type="text" name="username" value= <%= author.username %>>
+              <input class="form-control" style="margin:1rem 0" type="text" name="username" value= <%= employee.username %>>
               <br>
               Email:<br>
-              <input class="form-control" style="margin:1rem 0" type="email" name="email" value= <%= author.email %>>
+              <input class="form-control" style="margin:1rem 0" type="email" name="email" value= <%= employee.email %>>
               <br>
               Role:<br>
-              <input class="form-control" style="margin:1rem 0" type="text" name="role" value= <%= author.role %>>
+              <input class="form-control" style="margin:1rem 0" type="text" name="role" value= <%= employee.role %>>
               <br><br>
               <input class="btn btn-info" type="submit" value="Submit">
             </form>

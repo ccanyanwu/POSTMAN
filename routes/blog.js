@@ -3,7 +3,7 @@ var router = express.Router();
 
 
 // Require our controllers.
-var author_controller = require('../controllers/authorController');
+var employee_controller = require('../controllers/employeeController');
 var post_controller = require('../controllers/postController'); 
 var category_controller = require('../controllers/categoryController');
 var comment_controller = require('../controllers/commentController');
@@ -36,29 +36,29 @@ router.get('/post/:post_id', post_controller.post_detail);
 // GET request for list of all Post.
 router.get('/posts', post_controller.post_list);
 
-/// AUTHOR ROUTES ///
+/// employee ROUTES ///
 
-// GET request for creating Author. NOTE This must come before route for id (i.e. display author).
-router.get('/author/create', author_controller.author_create_get);
+// // GET request for creating Author. NOTE This must come before route for id (i.e. display author).
+// router.get('/author/create', author_controller.author_create_get);
 
-// POST request for creating Author.
-router.post('/author/create', author_controller.author_create_post);
+// POST request for creating employee.
+router.post('/employee/create', employee_controller.employee_create_post);
 
-// // GET request to delete Author.
- router.get('/author/:author_id/delete', author_controller.author_delete_get);
+// // POST request to delete employee.
+ router.post('/employee/:employee_id/delete', employee_controller.employee_delete_post);
 
 
-// // GET request to update Author.
- router.get('/author/:author_id/update', author_controller.author_update_get);
+// // // GET request to update Author.
+//  router.get('/author/:author_id/update', author_controller.author_update_get);
 
 // // POST request to update Author.
- router.post('/author/:author_id/update', author_controller.author_update_post);
+ router.post('/employee/:employee_id/update', employee_controller.employee_update_post);
 
  // GET request for one Author.
- router.get('/author/:author_id', author_controller.author_detail);
+ router.get('/employee/:employee_id', employee_controller.employee_detail);
 
  // GET request for list of all Authors.
-router.get('/authors', author_controller.author_list);
+router.get('/employees', employee_controller.employee_list);
 
 /// USER ROUTES ///
 

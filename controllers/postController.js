@@ -125,7 +125,7 @@ exports.index = function(req, res) {
       models.Post.findAndCountAll(
       ).then(function(postCount) {
           models.Author.findAndCountAll(
-      ).then(function(authorCount) {
+      ).then(function(employeeCount) {
           models.User.findAndCountAll(
       ).then(function(userCount) {
           models.Category.findAndCountAll(
@@ -140,10 +140,8 @@ exports.index = function(req, res) {
  
         // find the count of categories in database
  
-        res.render('pages/index', {title: 'Homepage', postCount: postCount, authorCount: authorCount, userCount:userCount, categoryCount:categoryCount, commentCount:commentCount ,layout: 'layouts/main'});
+        res.render('pages/index', {title: 'Homepage', postCount: postCount, employeeCount: employeeCount, userCount:userCount, categoryCount:categoryCount, commentCount:commentCount ,layout: 'layouts/main'});
         
-        // res.render('pages/index_list_sample', { title: 'Post Details', layout: 'layouts/list'});
-        // res.render('pages/index_detail_sample', { page: 'Home' , title: 'Post Details', layout: 'layouts/detail'});
       });
       });
       });
