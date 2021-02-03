@@ -82,7 +82,7 @@ exports.employee_delete_get = function(req, res, next) {
 exports.employee_update_post = function(req, res, next) {
         // POST logic to update an user here
         console.log("ID is " + req.params.employee_id);
-        models.employee.update(
+        models.Employee.update(
         // Values to update
             {
                 username: req.body.username,
